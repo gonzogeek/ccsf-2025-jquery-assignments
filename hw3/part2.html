@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Homework 3 Part 1 for JavaScript, jQuery, AJAX course at CCSF"
+    />
+    <title>JavaScript - Homework 3</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="js/part2.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <a class="button" href="../index.html">homepage</a>
+        <h2>Homeworks</h2>
+        <div class="homeworks">
+          <a class="button" href="../hw2.html">homework 2</a>
+          <a class="button" href="../hw3.html">homework 3</a>
+          <a class="button">homework 4</a>
+          <a class="button">homework 5</a>
+          <a class="button">homework 6</a>
+          <a class="button">homework 7</a>
+          <a class="button">homework 8</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h1>CNIT 133 Homework 3 - Functions</h1>
+        </div>
+        <div class="panel">
+          <h2>Part 2 - Commission Calculator</h2>
+          <form name="myform" id="myform" class="inner-content">
+            <div>
+              <label for="name">Seller's Name:</label>
+              <input type="text" name="name" id="name" size="10" />
+            </div>
+
+            <p>For each item type, enter the quantity sold by the seller:</p>
+
+            <div>
+              <label for="item1Amount">Item 1</label>
+              <input
+                type="text"
+                name="item1Amount"
+                id="item1Amount"
+                size="10"
+              />
+            </div>
+            <div>
+              <label for="item2Amount">Item 2</label>
+              <input
+                type="text"
+                name="item2Amount"
+                id="item2Amount"
+                size="10"
+              />
+            </div>
+            <div>
+              <label for="item3Amount">Item 3</label>
+              <input
+                type="text"
+                name="item3Amount"
+                id="item3Amount"
+                size="10"
+              />
+            </div>
+            <div>
+              <label for="item4Amount">Item 4</label>
+              <input
+                type="text"
+                name="item4Amount"
+                id="item4Amount"
+                size="10"
+              />
+            </div>
+            <br />
+            <input type="submit" value="SUBMIT" />
+            <input type="reset" onclick="reset()" value="RESET" />
+            <br />
+            <div id="response">
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="3">Quarterly Sales Results</th>
+                  </tr>
+                  <tr>
+                    <th>Item #</th>
+                    <th>Price</th>
+                    <th>Qty Sold</th>
+                    <th>Total $</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>$20.99</td>
+                    <td>
+                      <input type="text" size="15" id="qty1" disabled />
+                    </td>
+                    <td>
+                      <input type="text" size="15" id="amt1" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>$12.75</td>
+                    <td>
+                      <input type="text" size="15" id="qty2" disabled />
+                    </td>
+                    <td>
+                      <input type="text" size="15" id="amt2" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>$9.95</td>
+                    <td>
+                      <input type="text" size="15" id="qty3" disabled />
+                    </td>
+                    <td>
+                      <input type="text" size="15" id="amt3" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>$35.89</td>
+                    <td>
+                      <input type="text" size="15" id="qty4" disabled />
+                    </td>
+                    <td>
+                      <input type="text" size="15" id="amt4" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Totals</td>
+                    <td>
+                      <input type="text" size="15" id="qtyTotal" disabled />
+                    </td>
+                    <td>
+                      <input type="text" size="15" id="amtTotal" disabled />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+        <div class="panel">
+          <a class="button" href="../hw3.html">back to homework 3 main page</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
