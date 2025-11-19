@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="description"
-      content="Homework 5 Part 1 for JavaScript, jQuery, AJAX course at CCSF"
+      content="Homework 5 Part 2 for JavaScript, jQuery, AJAX course at CCSF"
     />
     <title>JavaScript - Homework 5</title>
     <link rel="stylesheet" href="../styles.css" />
@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
-    <script src="js/part1.js"></script>
+    <script src="js/part2.js"></script>
   </head>
   <body>
     <div class="main">
@@ -35,61 +35,22 @@
           <h1>CNIT 133 Homework 5 - Arrays</h1>
         </div>
         <div class="panel">
-          <h2>Part 1 - Data Submission</h2>
-          <form>
-            <div class="inner-content">
-              <label for="name" class="main-label">Name</label>
-              <input name="name" id="name" />
-            </div>
-            <div class="inner-content">
-              <label for="age" class="main-label">Age</label>
-              <div>
-                <input type="radio" id="ageRange1" name="age" />
-                <label for="ageRange1">less than 21</label><br />
-              </div>
-              <div>
-                <input type="radio" id="ageRange2" name="age" />
-                <label for="ageRange2">between 21 and 50</label><br />
-              </div>
-              <div>
-                <input type="radio" id="ageRange3" name="age" />
-                <label for="ageRange3">older than 50</label>
-              </div>
-            </div>
-            <div class="inner-content">
-              <label for="browser" class="main-label">Browser</label>
-              <div>
-                <input type="checkbox" id="browser1" name="browser" />
-                <label for="browser1">Firefox</label><br />
-              </div>
-              <div>
-                <input type="checkbox" id="browser2" name="browser" />
-                <label for="browser2">Edge</label><br />
-              </div>
-              <div>
-                <input type="checkbox" id="browser3" name="browser" />
-                <label for="browser3">Chrome</label>
-              </div>
-              <div>
-                <input type="checkbox" id="browser4" name="browser" />
-                <label for="browser4">Safari</label>
-              </div>
-            </div>
-            <div class="inner-content">
-              <label for="genres">Choose your favorite movie genre:</label>
-              <select id="genres" name="genres">
-                <option value="action">Action</option>
-                <option value="comedy">Comedy</option>
-                <option value="drama">Drama</option>
-                <option value="documentary">Documentary</option>
-                <option value="science-fiction">Science Fiction</option>
-              </select>
-            </div>
-            <input type="submit" value="SUBMIT" />
-            <input type="reset" onclick="reset()" value="RESET" />
-            <br />
-            <br />
-            <div id="response"></div>
+          <h2>Part 2 - Dropdowns with Links</h2>
+          <form class="inner-content">
+            <select id="menu1" onchange="handleMenuChange()">
+              <option value="">which utensil? (no button required)</option>
+              <option value="https://www.forks.com">Forks</option>
+              <option value="https://www.spoons.com">Spoons</option>
+              <option value="https://www.knives.com">Knives</option>
+            </select>
+
+            <select id="menu2">
+              <option value="">eenie, meenie, miney...</option>
+              <option value="https://www.eenie.com">Eenie</option>
+              <option value="https://www.meenie.com">Meenie</option>
+              <option value="https://www.minie.com">Minie</option>
+            </select>
+            <button id="goButton" onclick="handleMenuClick()">Go</button>
           </form>
         </div>
         <div class="panel">
