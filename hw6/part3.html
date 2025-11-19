@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Homework 6 Part 3 for JavaScript, jQuery, AJAX course at CCSF"
+    />
+    <title>JavaScript - Homework 6</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="js/part3.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <a class="button" href="../index.html">homepage</a>
+        <h2>Homeworks</h2>
+        <div class="homeworks">
+          <a class="button" href="../hw2.html">homework 2</a>
+          <a class="button" href="../hw3.html">homework 3</a>
+          <a class="button" href="../hw4.html">homework 4</a>
+          <a class="button" href="../hw5.html"> homework 5</a>
+          <a class="button" href="../hw6.html">homework 6</a>
+          <a class="button">homework 7</a>
+          <a class="button">homework 8</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h1>CNIT 133 Homework 6 - Objects</h1>
+        </div>
+        <div class="panel">
+          <h2>Part 3 - Phone Number Validator</h2>
+          <form onsubmit="return false;">
+            <label for="phone"
+              >Enter your phone number for chaos processing:</label
+            ><br />
+            <input
+              type="text"
+              id="phone"
+              placeholder="(999) 999-9999"
+              size="20"
+            /><br /><br />
+
+            <button type="button" onclick="validatePhone()">Validate</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+          </form>
+
+          <br />
+          <div id="output"></div>
+        </div>
+        <div class="panel">
+          <a class="button" href="../hw6.html">back to homework 6 main page</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
