@@ -146,3 +146,29 @@ a.button[href]:hover {
   align-items: center;
   padding: 6px;
 }
+
+.flex {
+  display: flex;
+  padding: 0;
+}
+
+ul.dropdown {
+  text-align: left;
+}
+ul.dropdown ul {
+  visibility: hidden;
+  text-align: left;
+  padding: 0;
+}
+
+ul.dropdown li {
+  list-style-type: none;
+}
+
+ul.dropdown li a {
+  display: block;
+  list-style-type: none;
+  color: black;
+  padding: 4px;
+  border: 1px solid #84708a;
+}

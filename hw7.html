@@ -4,12 +4,23 @@
     <meta charset="utf-8" />
     <meta
       name="description"
-      content="Homework 6 for JavaScript, jQuery, AJAX course at CCSF"
+      content="Homework 7 for JavaScript, jQuery, AJAX course at CCSF"
     />
-    <title>JavaScript - Homework 6</title>
+    <title>JavaScript - Homework 7</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".answer").hide();
+
+        $("h2").on("click", function () {
+          $(this).next(".answer").slideToggle();
+          $(this).toggleClass("close");
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="main">
@@ -28,20 +39,20 @@
       </div>
       <div class="content">
         <div class="panel">
-          <h1>CNIT 133 Homework 6 - Objects</h1>
+          <h1>CNIT 133 Homework 7 - Object Model and Event Model</h1>
         </div>
         <div class="panel">
           <h2>Part 1</h2>
-          <p>Float Rounder</p>
-          <a class="button" href="hw6/part1.html">Part 1</a>
+          <div class="answer inner-content">
+            <p>Style Switcher for Moby Dick</p>
+            <a class="button" href="hw7/part1.html">Part 1</a>
+          </div>
           <p>--------------------</p>
           <h2>Part 2</h2>
-          <p>Number Counter</p>
-          <a class="button" href="hw6/part2.html">Part 2</a>
-          <p>--------------------</p>
-          <h2>Part 3</h2>
-          <p>Phone Number Validator</p>
-          <a class="button" href="hw6/part3.html">Part 3</a>
+          <div class="answer inner-content">
+            <p>Dropdown Mouseovers</p>
+            <a class="button" href="hw7/part2.html">Part 2</a>
+          </div>
         </div>
       </div>
     </div>
