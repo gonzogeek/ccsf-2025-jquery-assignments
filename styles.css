@@ -172,3 +172,7 @@ ul.dropdown li a {
   padding: 4px;
   border: 1px solid #84708a;
 }
+
+a.regular_link {
+  color: #84708a;
+}

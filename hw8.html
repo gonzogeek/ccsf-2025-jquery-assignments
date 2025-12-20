@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework 8 - AJAX Application</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <a class="button" href="index.html">homepage</a>
+        <h2>Homeworks</h2>
+        <div class="homeworks">
+          <a class="button" href="hw2.html">homework 2</a>
+          <a class="button" href="hw3.html">homework 3</a>
+          <a class="button" href="hw4.html">homework 4</a>
+          <a class="button" href="hw5.html">homework 5</a>
+          <a class="button" href="hw6.html">homework 6</a>
+          <a class="button" href="hw7.html">homework 7</a>
+          <a class="button" href="hw8.html">homework 8</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h1>CNIT 133 Homework 8 - AJAX Application</h1>
+        </div>
+        <div class="panel">
+          <h2>CD Collection</h2>
+          <button type="button" onclick="loadDoc()">Get CD collection</button>
+          <br /><br />
+          <table id="demo"></table>
+          <br />
+          <h2>Explanation of AJAX</h2>
+          <p>
+            The js that is called on this page is used to populate my CD
+            Collection after clicking the above button.
+          </p>
+          <p>
+            On click, the button calls the loadDoc() function. The loadDoc()
+            function creates an XMLHttpRequest object, which in turn opens the
+            cd_catalog.xml file with a "GET" AJAX request.
+          </p>
+          <p>
+            Once cd_catalog.xml file is loaded, the 'onload' method that was
+            called earlier triggers and calls myFunction() with the xml document
+            passed as an argument. myFunction() structures the document's data
+            into an HTML table, and then replaces the inner HTML of the table
+            above with id "demo" with the structured data.
+          </p>
+          <h2>REST API</h2>
+          <p>
+            I've done some research into the REST APIs on https://apilist.fun/,
+            and I propose that we use the following API:
+            <a class="regular_link" href="https://apilist.fun/api/astronomy"
+              >Astronomy API</a
+            >
+          </p>
+          <p>
+            This REST Astronomy API provides timings for sunrise, sunset,
+            moonrise, moonset, sun azimuth, moon azimuth, sun altitude, moon
+            altitude, sun distance from the earth and moon distance from the
+            earth from latitude and longitude or an IPv4 or IPv6 address for a
+            given date.
+          </p>
+          <p>
+            The Astronomy REST API is from ipgeolocation.io. This is a website
+            by JFreaks, who have been in the developing software professionally
+            for seven years. The combination of quick JFreaks IP Lookup nodes
+            and Cloudflare's global traffic steering make them "The Fastest IP
+            Geolocation Service". They offer 99.99% uptime SLA on all of their
+            paid plans.
+          </p>
+          <p>
+            Hitting the Astronomy REST API requires an API key, which you
+            receive for free when signing up for an account with the
+            ipgeolocation.io webiste. The developer can make a get request to
+            the API with the location in question, as well as the API key, in
+            order to get astronomy data in the response.
+          </p>
+          <p>
+            The responses from the Astronomy API are structured as JSON objects.
+            The developer will need to access the contents of those objects
+            accordingly.
+          </p>
+          <p>
+            The JFreaks location API services are free up to 1000 requests per
+            day, and seem to be able to scale infinitely past that. If we plan
+            to use more than 150k requests in a 24-hour period, we will have to
+            reach out to JFreaks regarding their enterprise plan.
+          </p>
+          <p>
+            We could use this tool to provide users with the most accurate star
+            signs, given their birthplace and date. It is fast, and we are able
+            to pay $99 a month for extra security if we so choose. Developers
+            who want to build for this REST API should go to the
+            <a
+              class="regular_link"
+              href="https://ipgeolocation.io/astronomy-api.html"
+              >Astronomy API docs here</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          myFunction(this);
+        };
+        xhttp.open("GET", "cd_catalog.xml");
+        xhttp.send();
+      }
+      function myFunction(xml) {
+        const xmlDoc = xml.responseXML;
+        const x = xmlDoc.getElementsByTagName("CD");
+        let table = "<tr><th>Artist</th><th>Title</th></tr>";
+        for (let i = 0; i < x.length; i++) {
+          table +=
+            "<tr><td>" +
+            x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+        }
+        document.getElementById("demo").innerHTML = table;
+      }
+    </script>
+  </body>
+</html>
